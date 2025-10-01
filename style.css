@@ -1,0 +1,218 @@
+/* Importação da fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* --- Estilos Gerais e Variáveis --- */
+:root {
+    --color-primary: #004c99; /* Azul escuro */
+    --color-secondary: #ff0000; /* Vermelho */
+    --color-text: #333;
+    --color-bg-light: #f4f4f4;
+    --color-bg-dark: #2c3e50;
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f8f8f8;
+    color: var(--color-text);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Header e Navegação --- */
+header {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    margin: 0;
+    color: var(--color-primary);
+}
+
+.main-nav .nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav .nav-menu li {
+    margin-left: 1.5rem;
+}
+
+.main-nav .nav-menu a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-menu a:hover {
+    color: var(--color-secondary);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+/* --- Seção de Herói (Banner) --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x600/004c99/FFFFFF?text=Super+Banner') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 8rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin: 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Seções de Conteúdo --- */
+.content-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.text-block, .image-block {
+    flex: 1;
+}
+
+/* Inverte a ordem das seções de conteúdo */
+.content-section.reverse .section-container {
+    flex-direction: row-reverse;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    margin: 0;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--color-bg-dark);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav .nav-menu {
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px; /* Alinhar abaixo do header */
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none; /* Oculta o menu por padrão */
+        text-align: center;
+    }
+
+    .main-nav .nav-menu.show {
+        display: flex;
+    }
+    
+    .main-nav .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .main-nav .nav-menu a {
+        display: block;
+        padding: 1rem;
+    }
+
+    .hero-section {
+        padding: 6rem 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .content-section {
+        padding: 2rem 1rem;
+    }
+    
+    .section-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-section.reverse .section-container {
+        flex-direction: column; /* Desativa a inversão em mobile */
+    }
+
+    .text-block, .image-block {
+        margin-bottom: 2rem;
+    }
+}
